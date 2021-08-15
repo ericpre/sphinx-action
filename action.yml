@@ -21,6 +21,12 @@ inputs:
       dependencies, for example with
       "apt-get update -y && apt-get install -y perl"
     required: false
+  sphinx-version:
+    description: 'Sphinx version'
+    required: false
+    default: 2.4.4
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.sphinx-version }}
